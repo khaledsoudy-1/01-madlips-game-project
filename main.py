@@ -7,9 +7,12 @@ def get_random_madlip():
     random_choice = random.choice([adventure, football, holiday, love, school, space, travel])
     return random_choice.madlip()
 
+
 # Function to play the Madlips game
 def play_madlips():
-    while True:
+    playing = True                # Control variable for the loop
+    
+    while playing:
         # Print instructions for the user
         print("Please, enter the following:\n")
         
@@ -33,7 +36,7 @@ def play_madlips():
         # Exit the game if user chooses to quit
         if playagain == 'q':
             print("\n🎉🎉Thank you for playing!\nBye 👋")
-            break
+            playing = False          # Update the control variable to stop the loop
 
 
 if __name__ == '__main__':
