@@ -8,7 +8,6 @@ def get_random_madlip():
 
 while True:
     # Print a welcome message
-    print("==== Welcome to The Madlips Game 🤖 ====")
     print("Please, enter the following:\n")
     
     # Call the function inside the loop
@@ -23,15 +22,13 @@ while True:
     while playagain not in ["y", "q"]:
         playagain = input("Y for Yes\nQ to Quit\n")
         
-    # If user wants to play again.
+    # If user wants to play again. ==> Continue Looping
     if playagain == 'y':
         # Print a welcome back message
         print("\n==== Welcome Back 😍 ====")
-        print("Please, enter the following:\n")
-        get_random_madlip()
+        continue
 
     # If user does not want to play again.
     if playagain == 'q':
         print("\n🎉🎉Thank you for playing!\nBye 👋")
         break
-    
