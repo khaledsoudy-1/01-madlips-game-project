@@ -1,4 +1,3 @@
-import sys
 from random_madlips import adventure, football, holiday, love, school, space, travel
 import random
 
@@ -7,24 +6,32 @@ def get_random_madlip():
     random_choice = random.choice([adventure, football, holiday, love, school, space, travel])
     return random_choice.madlip()
 
-get_random_madlip()
-
-# Ask user if they want to play again.
-print("Play again ?!")
-
 while True:
-    playagain = input("Y for Yes\nQ to Quit\n")
+    # Print a welcome message
+    print("==== Welcome to The Madlips Game 🤖 ====")
+    print("Please, enter the following:\n")
     
-    if playagain.lower() in ['y', 'q']:
-        break
-
-   
-if playagain.lower() == 'y':
-    print("==== Welcome Back 😍 ====")
+    # Call the function inside the loop
     get_random_madlip()
     
-if playagain.lower() == 'q':
-    print("🎉🎉Thank you for playing!\nBye 👋")
-    sys.exit()
+    # Ask user if they want to play again.
+    print("Play again ?!")
     
+    playagain = input("Y for Yes\nQ to Quit\n").lower().strip()
+    
+    # Enter the following loop only if wrong input was given.
+    while playagain not in ["y", "q"]:
+        playagain = input("Y for Yes\nQ to Quit\n")
+        
+    # If user wants to play again.
+    if playagain == 'y':
+        # Print a welcome back message
+        print("\n==== Welcome Back 😍 ====")
+        print("Please, enter the following:\n")
+        get_random_madlip()
+
+    # If user does not want to play again.
+    if playagain == 'q':
+        print("\n🎉🎉Thank you for playing!\nBye 👋")
+        break
     
